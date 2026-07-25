@@ -1,4 +1,5 @@
 import customtkinter as ctk
+from PIL import Image
 
 
 class DocumentViewer(ctk.CTkFrame):
@@ -12,30 +13,47 @@ class DocumentViewer(ctk.CTkFrame):
         titulo = ctk.CTkLabel(
             self,
             text="Documento",
-            font=("Arial", 22, "bold")
+            font=("Arial", 20, "bold")
         )
-        titulo.grid(row=0, column=0, pady=(20, 10))
+        titulo.grid(row=0, column=0, pady=10)
 
-        self.documento = ctk.CTkLabel(
+        self.image_label = ctk.CTkLabel(
             self,
-            text="Aquí aparecerá el documento",
-            fg_color="#ECECEC",
-            corner_radius=10
+            text="No hay documento cargado"
         )
-        self.documento.grid(
+        self.image_label.grid(
             row=1,
             column=0,
             sticky="nsew",
-            padx=20,
+            padx=10,
             pady=10
         )
 
-        self.nombre = ctk.CTkLabel(
+        self.file_label = ctk.CTkLabel(
             self,
-            text="Sin documento"
+            text=""
         )
-        self.nombre.grid(
-            row=2,
-            column=0,
-            pady=15
+        self.file_label.grid(row=2, column=0, pady=10)
+
+    def load_document(self, document):
+
+        image = Image.open(document.image)
+
+        image.thumbnail((500, 600))
+
+        ctk_image = ctk.CTkImage(
+            light_image=image,
+            dark_image=image,
+            size=image.size
+        )
+
+        self.image_label.configure(
+            image=ctk_image,
+            text=""
+        )
+
+        self.image_label.image = ctk_image
+
+        self.file_label.configure(
+            text=document.name
         )
