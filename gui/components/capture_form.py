@@ -68,3 +68,8 @@ class CaptureForm(ctk.CTkFrame):
             columnspan=2,
             pady=30
         )
+
+    def clear(self):
+
+        for entrada in self.entries.values():
+            entrada.delete(0, "end")
