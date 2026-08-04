@@ -7,7 +7,7 @@ from services.practice_session import PracticeSession
 from services.session_stats import SessionStats
 from services.answer_loader import AnswerLoader
 from services.validator import Validator
-
+from gui.components.summary_dialogo import SummaryDialog
 
 class CapturaFrame(ctk.CTkFrame):
 
@@ -141,11 +141,11 @@ class CapturaFrame(ctk.CTkFrame):
         )
 
     def next_document(self):
-        documento = self.practce_session.next_document()
+        documento = self.practice_session.next_document()
 
         if documento is None:
 
-            print("\n==== PRÁCTICA TERMINADA ====")
+            SummaryDialog(self, self.stats)  
             print("Documentos:", self.stats.completed_documents)
             print("Campos:", self.stats.total_fields)
             print("Correctos:",self.stats.correct_fields)
