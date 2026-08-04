@@ -10,12 +10,17 @@ class DocumentViewer(ctk.CTkFrame):
         self.grid_rowconfigure(1, weight=1)
         self.grid_columnconfigure(0, weight=1)
 
-        titulo = ctk.CTkLabel(
-            self,
-            text="Documento",
-            font=("Arial", 20, "bold")
+        self.title_label = ctk.CTkLabel(
+        self,
+        text="Documento",
+        font=("Arial", 20, "bold")
         )
-        titulo.grid(row=0, column=0, pady=10)
+
+        self.title_label.grid(
+            row=0,
+            column=0,
+            pady=10
+        )
 
         self.image_label = ctk.CTkLabel(
             self,
@@ -56,4 +61,9 @@ class DocumentViewer(ctk.CTkFrame):
 
         self.file_label.configure(
             text=document.name
+        )
+
+    def set_progress_(self, current, total):
+        self.title_label.configure(
+            text=f"Documento {current} de {total}"
         )

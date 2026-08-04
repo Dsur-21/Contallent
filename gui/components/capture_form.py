@@ -69,7 +69,33 @@ class CaptureForm(ctk.CTkFrame):
             pady=30
         )
 
+    def get_data(self):
+
+        return {
+            key: entry.get().strip()
+            for key, entry in self.entries.items()
+        }
+
     def clear(self):
 
         for entrada in self.entries.values():
             entrada.delete(0, "end")
+
+            entrada.configure(
+                fg_color=("white", "gray20")
+            )
+
+    def show_validation(self, resultado):
+
+        for campo, correcto in resultado.items():
+
+            print(campo, correcto)
+
+            if correcto:
+                color = "green"
+            else:
+                color = "red"
+
+            self.entries[campo].configure(
+                fg_color=color
+            )

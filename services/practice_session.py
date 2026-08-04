@@ -46,3 +46,21 @@ class PracticeSession:
             return None
 
         return self.documents[self.current_index]
+
+    @property
+    def total_documents(self):
+
+        return len(self.documents)
+
+    @property 
+    def current_document_number(self):
+
+        return self.current_index + 1
+
+    @property 
+    def remaining_documents(self):
+
+        return self.total_documents - self.current_document_number
+
+    def is_finished(self):
+        return self.current_index >= self.total_documents
