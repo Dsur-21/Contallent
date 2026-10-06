@@ -1,6 +1,7 @@
 {
-    "nombre": "Papelería Central",
-    "fecha": "2026-07-15",
-    "importe": "348.50",
-    "concepto": "Material de oficina"
+    "nombre": "Limpieza corporativa del norte",
+    "fecha": "2026-08-06",
+    "importe": "2,760.80",
+    "concepto": "Material de limpieza",
+    "num_che": "000892"
 }

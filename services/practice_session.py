@@ -15,11 +15,22 @@ class PracticeSession:
 
         self.started = False
 
-    def start(self):
+    def start(self, cantidad=None):
 
-        self.documents = self.document_manager.get_all_documents()
+        documentos = self.document_manager.get_all_documents()
 
-        random.shuffle(self.documents)
+        random.shuffle(documentos)
+
+        if cantidad is not None:
+
+            cantidad = min(
+                cantidad,
+                len(documentos)
+            )
+
+            documentos = documentos[:cantidad]
+
+        self.documents = documentos
 
         self.current_index = -1
 
@@ -52,15 +63,28 @@ class PracticeSession:
 
         return len(self.documents)
 
-    @property 
+    @property
     def current_document_number(self):
+
+        if self.current_index < 0:
+            return 0
 
         return self.current_index + 1
 
-    @property 
-    def remaining_documents(self):
+    @property
+    def finished(self):
 
-        return self.total_documents - self.current_document_number
+        return (
+            self.started
+            and self.current_index >= len(self.documents)
+        )
 
-    def is_finished(self):
-        return self.current_index >= self.total_documents
+    
+
+    def reset(self):
+
+        self.documents = []
+
+        self.current_index = -1
+
+        self.started = False

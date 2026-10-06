@@ -4,7 +4,11 @@ import customtkinter as ctk
 class Sidebar(ctk.CTkFrame):
 
     def __init__(self, master, on_change):
-        super().__init__(master, width=220, corner_radius=0)
+        super().__init__(
+            master,
+            width=220,
+            corner_radius=0
+        )
 
         self.on_change = on_change
 
@@ -20,7 +24,6 @@ class Sidebar(ctk.CTkFrame):
 
         opciones = [
             ("🏠 Inicio", "home"),
-            ("📝 Nueva práctica", "captura"),
             ("📜 Historial", "historial"),
             ("⚙ Configuración", "configuracion")
         ]

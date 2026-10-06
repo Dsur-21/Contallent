@@ -92,9 +92,9 @@ class CaptureForm(ctk.CTkFrame):
             print(campo, correcto)
 
             if correcto:
-                color = "green"
+                color = "#50BE66"
             else:
-                color = "red"
+                color = "#F84B4B"
 
             self.entries[campo].configure(
                 fg_color=color

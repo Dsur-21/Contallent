@@ -11,6 +11,34 @@ class SummaryDialog(ctk.CTkToplevel):
 
         self.resizable(False, False)
 
+
+        self.transient(master)
+
+        self.lift()
+        self.focus_force()
+
+        self.grab_set()
+
+        self.update_idletasks()
+
+        ancho = 350
+        alto = 320
+
+        ventana_ancho = master.winfo_width()
+        ventana_alto = master.winfo_height()
+
+        ventana_x = master.winfo_rootx()
+        ventana_y = master.winfo_rooty()
+
+        x = ventana_x + (ventana_ancho - ancho) // 2
+        y = ventana_y + (ventana_alto - alto) // 2
+
+        self.geometry(f"{ancho}x{alto}+{x}+{y}")
+
+        # ==========================================
+        # Contenido
+        # ==========================================
+
         titulo = ctk.CTkLabel(
             self,
             text="Práctica finalizada",
@@ -40,7 +68,12 @@ class SummaryDialog(ctk.CTkToplevel):
         boton = ctk.CTkButton(
             self,
             text="Aceptar",
-            command=self.destroy
+            command=self.close
         )
 
         boton.pack(pady=25)
+
+    def close(self):
+
+        self.grab_release()
+        self.destroy()

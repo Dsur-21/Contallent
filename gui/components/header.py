@@ -16,9 +16,18 @@ class Header(ctk.CTkFrame):
 
         titulo.pack(side="left", padx=20)
 
-        usuario = ctk.CTkLabel(
+        self.usuario_label = ctk.CTkLabel(
             self,
-            text="Usuario: lpz$med"
+            text="Usuario: "
         )
 
-        usuario.pack(side="right", padx=20)
+        self.usuario_label.pack(
+            side="right",
+            padx=20
+        )
+
+    def set_user(self, usuario):
+
+        self.usuario_label.configure(
+            text=f"Usuario: {usuario}"
+        )

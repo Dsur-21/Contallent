@@ -1,0 +1,58 @@
+[
+    {
+        "date": "2026-09-01 13:09:04",
+        "user": "qlk",
+        "documents": 1,
+        "correct_fields": 1,
+        "incorrect_fields": 6,
+        "precision": 14.29
+    },
+    {
+        "date": "2026-09-01 13:09:25",
+        "user": "poo",
+        "documents": 1,
+        "correct_fields": 1,
+        "incorrect_fields": 6,
+        "precision": 14.29
+    },
+    {
+        "date": "2026-09-01 13:09:36",
+        "user": "poo",
+        "documents": 1,
+        "correct_fields": 1,
+        "incorrect_fields": 6,
+        "precision": 14.29
+    },
+    {
+        "date": "2026-09-02 12:02:36",
+        "user": "qlk",
+        "documents": 1,
+        "correct_fields": 1,
+        "incorrect_fields": 6,
+        "precision": 14.29
+    },
+    {
+        "date": "2026-10-01 10:21:07",
+        "user": "poo",
+        "documents": 1,
+        "correct_fields": 4,
+        "incorrect_fields": 3,
+        "precision": 57.14
+    },
+    {
+        "date": "2026-10-06 10:56:04",
+        "user": "test",
+        "documents": 1,
+        "correct_fields": 6,
+        "incorrect_fields": 1,
+        "precision": 85.71
+    },
+    {
+        "date": "2026-10-06 10:57:26",
+        "user": "test",
+        "documents": 1,
+        "correct_fields": 3,
+        "incorrect_fields": 4,
+        "precision": 42.86
+    }
+]

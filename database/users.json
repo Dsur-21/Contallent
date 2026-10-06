@@ -1,0 +1,25 @@
+{
+    "qlk": {
+        "user": "qlk",
+        "practices": 2,
+        "documents": 2,
+        "correct_fields": 2,
+        "incorrect_fields": 12
+    },
+    "poo": {
+        "user": "poo",
+        "practices": 7,
+        "documents": 6,
+        "correct_fields": 13,
+        "incorrect_fields": 29,
+        "best_precision": 57.14
+    },
+    "test": {
+        "user": "test",
+        "practices": 2,
+        "documents": 2,
+        "correct_fields": 9,
+        "incorrect_fields": 5,
+        "best_precision": 85.71
+    }
+}

@@ -10,7 +10,8 @@ class StatusBar(ctk.CTkFrame):
 
         estado = ctk.CTkLabel(
             self,
-            text="Listo"
+            text="Elaborado por: ~~BA Lopme02~~\n" \
+            "Versión: 1.0.0  @2026"
         )
-
+        
         estado.pack(side="left", padx=10)
